@@ -61,4 +61,4 @@ HTTP/1.1 200 OK
 
 ## Contributors
 
-- [Patryk Szaruga]
+Patryk Szaruga
