@@ -51,37 +51,37 @@ public class PeselValidator {
         }
     }
 
-//    private String checkDateInPast(String peselNumber) {
-//        String yearStr = peselNumber.substring(0, 2);
-//        String monthStr = peselNumber.substring(2, 4);
-//        String dayStr = peselNumber.substring(4, 6);
-//
-//        int year = Integer.parseInt(yearStr);
-//        int month = Integer.parseInt(monthStr);
-//        int day = Integer.parseInt(dayStr);
-//
-//        if (month >= 1 && month <= 12) {
-//            year += 1900;
-//        }
-//        if (month >= 21 && month <= 32) {
-//            year += 2000;
-//            month -= 20;
-//        }
-//        if (month >= 41 && month <= 52) {
-//            year += 2100;
-//            month -= 40;
-//        }
-//
-//        try {
-//            LocalDate birthDate = LocalDate.of(year, month, day);
-//            LocalDate today = LocalDate.now();
-//            if (birthDate.isBefore(today)) {
-//                return peselNumber;
-//            } else {
-//                throw new ValidationException(PESEL_NUMBER_INCORRECT.getMessage());
-//            }
-//        } catch (Exception e) {
-//            throw new ValidationException(PESEL_NUMBER_INCORRECT.getMessage());
-//        }
-//    }
+    private String checkDateInPast(String peselNumber) {
+        String yearStr = peselNumber.substring(0, 2);
+        String monthStr = peselNumber.substring(2, 4);
+        String dayStr = peselNumber.substring(4, 6);
+
+        int year = Integer.parseInt(yearStr);
+        int month = Integer.parseInt(monthStr);
+        int day = Integer.parseInt(dayStr);
+
+        if (month >= 1 && month <= 12) {
+            year += 1900;
+        }
+        if (month >= 21 && month <= 32) {
+            year += 2000;
+            month -= 20;
+        }
+        if (month >= 41 && month <= 52) {
+            year += 2100;
+            month -= 40;
+        }
+
+        try {
+            LocalDate birthDate = LocalDate.of(year, month, day);
+            LocalDate today = LocalDate.now();
+            if (birthDate.isBefore(today)) {
+                return peselNumber;
+            } else {
+                throw new ValidationException(PESEL_NUMBER_INCORRECT.getMessage());
+            }
+        } catch (Exception e) {
+            throw new ValidationException(PESEL_NUMBER_INCORRECT.getMessage());
+        }
+    }
 }
