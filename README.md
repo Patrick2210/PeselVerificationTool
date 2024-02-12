@@ -55,9 +55,10 @@ Content-Type: application/json
 }
 
 
-Example response:
+**Example response:**
 
 HTTP 200 OK
+
 HTTP 400 BAD_REQUEST
 
 ## Contributors
